@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Deckard</title>
+    <title><%= yield :title %></title>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="js-main">
-      <%= yield %>
-    </div>
+    <header>
+      <h1><%= DEPLOYMENT_NAME %></h1>
+    </header>
+    <%= yield %>
     <%= javascript_include_tag "application" %>
     <% if Rails.env.development? %>
       <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
