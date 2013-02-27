@@ -1,3 +1,22 @@
-@import 'bourbon';
-@import 'neat';
-@import 'old_fashioned/old_fashioned';
+@import "bourbon";
+@import "neat";
+@import "old_fashioned/old_fashioned";
+
+@import "vendor/*";
+
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: hsla(210, 53%, 51%, 1.0);
+  @include transition(color 0.2s);
+
+  &:hover {
+    border-bottom: 1px solid;
+  }
+}
+
+@import "components/*";
