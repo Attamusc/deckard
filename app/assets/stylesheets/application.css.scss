@@ -1,7 +1,26 @@
-@import 'bourbon';
-@import 'neat';
-@import 'old_fashioned/old_fashioned';
+@import "globals/*";
+@import "bourbon";
+@import "neat";
+@import "old_fashioned/old_fashioned";
+
+@import "vendor/*";
 
 body {
   font-family: 'Varela Round', sans-serif;
+  background: unquote("linear-gradient(135deg, #{$main-gradient} 5px, #{$secondary-gradient} 5px, #{$secondary-gradient} 7px, transparent 7px, transparent 16px, #{$secondary-gradient} 16px, #{$secondary-gradient} 18px, transparent 18px), linear-gradient(225deg, #{$main-gradient} 5px, #{$secondary-gradient} 5px, #{$secondary-gradient} 7px, transparent 7px, transparent 16px, #{$secondary-gradient} 16px, #{$secondary-gradient} 18px, transparent 18px) 0 16px");
+  background-color: $main-gradient;
+  background-size: 16px 32px;
 }
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: hsla(210, 53%, 51%, 1.0);
+  @include transition(color 0.2s);
+
+  &:hover {
+    border-bottom: 1px solid;
+  }
+}
+
+@import "components/*";
