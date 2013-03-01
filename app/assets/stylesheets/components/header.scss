@@ -1,7 +1,9 @@
-header {
+body > header {
+  min-width: 800px;
   height: 42px;
   background-color: hsla(0, 0%, 70%, 1.0);
-  @include linear-gradient(top, hsla(0, 0%, 80%, 1.0), hsla(10, 0%, 75%, 1.0));
+  @include box-shadow(0 0 5px hsla(0, 0%, 20%, 1.0), 0 2px 20px hsla(0, 0%, 20%, 0.4));
+  @include linear-gradient(top, $header-color, shade($header-color, 10%));
 
   h1 {
     font-size: 18px;
@@ -29,12 +31,11 @@ header {
 
     li {
       font-size: 18px;
-      text-shadow: 0 1px 0 #EFEFEF;
       padding: 10px 20px;
       text-align: center;
       float: left;
-      border-left: 1px solid rgba(255,255,255,0.5);
-      border-right: 1px solid rgba(0,0,0,0.4);
+      border-left: 1px solid rgba(255,255,255,0.4);
+      border-right: 1px solid rgba(0,0,0,0.3);
       cursor: pointer;
       @include transition(background-color 0.2s);
 
@@ -43,16 +44,17 @@ header {
       }
 
       &:hover {
-        background-color: tint(hsla(0, 0%, 80%, 1.0), 15%);
+        background-color: tint($header-color, 15%);
       }
     }
 
     .active {
-      background-color: darken(hsla(0, 0%, 80%, 1.0), 10%);
+      background-color: darken($header-color, 10%);
+      border-left: 1px solid tint(rgba(0,0,0,0.3), 10%);
       @include box-shadow(inset 0 0 3px 1px hsla(100, 0%, 0%, 0.20));
 
       &:hover {
-        background-color: darken(hsla(0, 0%, 80%, 1.0), 10%); 
+        background-color: darken($header-color, 10%); 
         cursor: default;
       }
     }
