@@ -1,3 +1,3 @@
 Deckard::Application.routes.draw do
-  root :to => "statics#index"
+  root :to => "lists#index"
 end
