@@ -5,6 +5,8 @@ Deckard::Application.configure do
   config.serve_static_assets = false
   config.assets.compress = true
   config.assets.compile = false
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
   config.assets.digest = true
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify

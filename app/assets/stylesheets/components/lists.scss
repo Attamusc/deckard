@@ -1,0 +1,64 @@
+.new-list {
+  margin: 0 auto;
+  padding: 20px 60px 20px 20px;  
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  vertical-align: middle;
+  position: relative;
+
+  input {
+    /*display: inline-block;*/
+    /*position: relative;*/
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid hsla(0, 0%, 80%, 1.0);
+    border-color: hsla(0, 0%, 80%, 1.0);
+    border-radius: 5px 0 0 5px;
+    vertical-align: top;
+    @include transition(border-color linear 0.2s);
+
+    &:focus {
+      outline: 0;
+      border-color: hsla(206, 80%, 62%, 0.8);
+    }
+  }
+
+  button {
+    background-color: $main-gradient;
+    position: absolute;
+    top: 20px;
+    right: 21px;
+    font-size: 18px;
+    width: 40px;
+    padding: 5px 0 0;
+    text-align: center;
+    border: 1px solid hsla(0, 0%, 80%, 1.0);
+    vertical-align: top;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.lists {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-size: 18px;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(255,255,255,0.6);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    i {
+      float: right;
+      font-size: 16px;
+      padding-top: 2px;
+    }
+  }
+}
