@@ -6,12 +6,7 @@
   position: relative;
 
   input {
-    /*display: inline-block;*/
-    /*position: relative;*/
     width: 100%;
-    padding: 5px 10px;
-    border: 1px solid hsla(0, 0%, 80%, 1.0);
-    border-color: hsla(0, 0%, 80%, 1.0);
     border-radius: 5px 0 0 5px;
     vertical-align: top;
     @include transition(border-color linear 0.2s);
@@ -50,8 +45,18 @@
     padding: 20px 40px;
     border-bottom: 1px solid rgba(0,0,0,0.3);
     border-top: 1px solid rgba(255,255,255,0.6);
+    cursor: pointer;
+
+    &:hover {
+      background-color: hsla(0, 0%, 90%, 1.0);
+    }
 
     &:last-child {
+      border-bottom: 0;
+    }
+
+    a, a:hover, a:visited, a:active {
+      color: #333;
       border-bottom: 0;
     }
 
