@@ -7,13 +7,14 @@
     <title><%= yield :title %></title>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= requirejs_include_tag "deckard.js" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li class="active">Lists</li>
+          <li class="active"><%= link_to "Lists", lists_path %></li>
           <li>Inventory</li>
           <li>Expenses</li>
           <li>Automation</li>
@@ -27,6 +28,5 @@
     </div>
     <footer>
     </footer>
-    <%= javascript_include_tag "application" %>
   </body>
 </html>

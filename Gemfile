@@ -12,7 +12,7 @@ group :assets do
   gem 'neat'
 
   # Javascript
-  gem 'jquery-rails'
+  gem 'requirejs-rails'
   gem 'uglifier', '>= 1.0.3'
 
   # Templates
@@ -23,7 +23,6 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'meta_request'
 
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'

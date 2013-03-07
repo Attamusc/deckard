@@ -5,12 +5,12 @@
 </header>
 <section class="lists">
   <div class="new-list">
-    <input id="js-list-name" placeholder="Enter name of new List..." type="text"/>
+    <input id="js-new-list-name" placeholder="Enter name of new List..." type="text"/>
     <button id="js-add-list"><i class="ss-icon">plus</i></button>
   </div>
   <ul>
   <% for list in @lists %>
-    <li><%= link_to list do %><%= list.name %><% end %><i class="ss-icon">next</i></li>
+    <li><%= link_to list do %><span class="list-name"><%= list.name %></span><i class="ss-icon">next</i><% end %></li>
   <% end %>
   </ul>
 </section>
