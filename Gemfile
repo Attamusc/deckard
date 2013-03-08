@@ -12,11 +12,7 @@ group :assets do
   gem 'neat'
 
   # Javascript
-  gem 'requirejs-rails'
   gem 'uglifier', '>= 1.0.3'
-
-  # Templates
-  gem 'handlebars_assets'
 end
 
 group :development, :test do

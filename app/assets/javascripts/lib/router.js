@@ -14,7 +14,10 @@ define(function() {
     start: function(location) {
       this.routes.forEach(function(handler) {
         if(handler.route.test(location)) {
-          handler.callback(handler.route.exec(location).splice(1));
+          if(typeof handler.callback === 'function')
+            handler.callback(handler.route.exec(location).slice(1));
+          else if(typeof handler.callback === 'object')
+            handler.callback.init(handler.route.exec(location).slice(1));
         }
       });
     }

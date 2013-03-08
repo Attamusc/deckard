@@ -7,7 +7,7 @@
     <title><%= yield :title %></title>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= requirejs_include_tag "deckard.js" %>
+    <script type="text/javascript" data-main="/assets/deckard" src="/assets/require.js"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>
