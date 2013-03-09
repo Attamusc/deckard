@@ -16,6 +16,7 @@ define(['jquery', 'hbs!templates/lists/listRow', 'underscore'], function($, list
       this.$list.on('click', 'span.list-name', this.onListNameClick);
       this.$list.on('click', 'input', this.onNameInputClick);
       this.$list.on('blur', 'input', this.onNameInputBlur);
+      this.$list.on('click', '.remove', this.onRemoveButtonClick);
     },
     onAddButtonClick: function() {
       var self = this;
@@ -89,6 +90,30 @@ define(['jquery', 'hbs!templates/lists/listRow', 'underscore'], function($, list
         });
       }
     },
+    onRemoveButtonClick: function(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+
+      var $item = $(evt.target),
+          $parent = $item.parent(),
+          endpoint = $parent.attr('href') + '.json';
+
+      var promise = $.ajax({
+        url: endpoint,
+        type: 'POST',
+        data: {
+          _method: 'delete'
+        }
+      });
+
+      promise.done(function(data) {
+        $parent.parent().remove();
+      });
+
+      promise.fail(function(error) {
+        console.log(error);
+      });
+    }
   };
 
   return ListsRoute;

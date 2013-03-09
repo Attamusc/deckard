@@ -20,12 +20,12 @@ class ListsController < ApplicationController
 
   def update
     @list.update_attributes(params[:list])
-    #respond_with(@list)
     render :json => {:id => @list.id, :name => @list.name }
   end
 
   def destroy
     @list.destroy
+    render :json => {:message => "success"}
   end
 
   protected

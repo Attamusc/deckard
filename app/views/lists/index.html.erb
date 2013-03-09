@@ -10,7 +10,7 @@
   </div>
   <ul>
   <% for list in @lists %>
-    <li><%= link_to list do %><span class="list-name"><%= list.name %></span><i class="ss-icon">next</i><% end %></li>
+    <li><%= link_to list do %><i class="ss-icon remove">delete</i><span class="list-name"><%= list.name %></span><i class="ss-icon next">next</i><% end %></li>
   <% end %>
   </ul>
 </section>
