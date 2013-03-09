@@ -24,5 +24,16 @@
   section {
     border-top: 1px solid rgba(255,255,255,0.4);
   }
+
+  input {
+    padding: 5px 10px;
+    border: 1px solid hsla(0, 0%, 80%, 1.0);
+    border-color: hsla(0, 0%, 80%, 1.0);
+
+    &:focus {
+      outline: 0;
+      border-color: hsla(206, 80%, 62%, 0.8);
+    }
+  }
 }
 

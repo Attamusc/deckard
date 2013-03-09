@@ -1,1 +1,1 @@
-web: bundle exec thin start --environment development --port 5000
+web: bundle exec rails s thin --port 5000

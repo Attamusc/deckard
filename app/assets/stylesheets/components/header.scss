@@ -46,6 +46,11 @@ body > header {
       &:hover {
         background-color: tint($header-color, 15%);
       }
+
+      a, a:hover, a:visited, a:active {
+        color: hsla(0, 0%, 20%, 1.0);
+        border: 0;
+      }
     }
 
     .active {
@@ -55,7 +60,6 @@ body > header {
 
       &:hover {
         background-color: darken($header-color, 10%); 
-        cursor: default;
       }
     }
   }

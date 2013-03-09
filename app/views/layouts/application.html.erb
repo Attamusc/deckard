@@ -7,13 +7,15 @@
     <title><%= yield :title %></title>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <script type="text/javascript" data-main="/assets/deckard" src="/assets/require.js"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li class="active">Lists</li>
+          <li class="active"><%= link_to "Lists", lists_path %></li>
+          <li>Inventory</li>
           <li>Expenses</li>
           <li>Automation</li>
           <li>Network</li>
@@ -25,11 +27,6 @@
       <%= yield %>
     </div>
     <footer>
-      <%#<p>Made with love by <a href="http://twitter.com/attamusc">@attamusc</a></p>%>
     </footer>
-    <%= javascript_include_tag "application" %>
-    <% if Rails.env.development? %>
-      <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-    <% end %> 
   </body>
 </html>

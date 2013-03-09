@@ -6,12 +6,7 @@
   position: relative;
 
   input {
-    /*display: inline-block;*/
-    /*position: relative;*/
     width: 100%;
-    padding: 5px 10px;
-    border: 1px solid hsla(0, 0%, 80%, 1.0);
-    border-color: hsla(0, 0%, 80%, 1.0);
     border-radius: 5px 0 0 5px;
     vertical-align: top;
     @include transition(border-color linear 0.2s);
@@ -47,18 +42,48 @@
 
   li {
     font-size: 18px;
-    padding: 20px 40px;
     border-bottom: 1px solid rgba(0,0,0,0.3);
     border-top: 1px solid rgba(255,255,255,0.6);
+    cursor: pointer;
 
     &:last-child {
       border-bottom: 0;
     }
 
-    i {
-      float: right;
-      font-size: 16px;
-      padding-top: 2px;
+    a, a:visited, a:active {
+      display: block;
+      padding: 20px 40px;
+      color: #333;
+      border-bottom: 0;
+
+      &:hover {
+        background-color: hsla(0, 0%, 90%, 1.0);
+
+        .remove {
+          visibility: visible;
+        }
+      }
     }
+
   }
+}
+
+.remove {
+  visibility: hidden;
+  float: left;
+  position: absolute;
+  left: 14px;
+  font-size: 16px;
+  padding-top: 2px;
+  @include transition(color ease-in 0.1s 0);
+
+  &:hover {
+    color: red;
+  }
+}
+
+.next {
+  float: right;
+  font-size: 16px;
+  padding-top: 2px;
 }
